@@ -139,3 +139,79 @@
         font-size: 20px;
     }
 }
+
+/* Blog Specific Styles - Add to your existing styles.css */
+
+/* Featured Post */
+.featured-card {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.featured-card:hover {
+    transform: translateY(-5px);
+}
+
+.featured-badge {
+    background-color: #ff5600;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Blog Cards */
+.blog-card {
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+}
+
+.post-category {
+    color: #ff5600;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.text-custom {
+    color: #ff5600 !important;
+}
+
+.text-custom:hover {
+    color: #e64d00 !important;
+}
+
+/* Newsletter Section */
+.newsletter-form .form-control {
+    height: 50px;
+    border-radius: 25px 0 0 25px;
+    border: 1px solid #ddd;
+}
+
+.newsletter-form .btn {
+    border-radius: 0 25px 25px 0;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* Blog Header */
+.blog-header {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .featured-card .row {
+        flex-direction: column;
+    }
+
+    .featured-card .card-body {
+        padding: 2rem 1rem;
+    }
+}

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Your Name</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation (Same as main page) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-custom-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/your-logo.png" alt="Your Brand Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <header class="blog-header py-5 mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h1 class="display-4 fw-bold text-primary">Digital Marketing Insights</h1>
+                    <p class="lead">Expert tips, strategies, and insights for modern business growth</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Featured Post -->
+    <section class="featured-post py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="card featured-card border-0">
+                        <div class="row g-0">
+                            <div class="col-md-6">
+                                <img src="/api/placeholder/800/600" class="img-fluid rounded-start" alt="Featured Post">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card-body p-4">
+                                    <div class="featured-badge mb-2">Featured</div>
+                                    <h2 class="card-title h3">The Future of Digital Marketing in 2024</h2>
+                                    <p class="text-muted mb-2">December 4, 2024 • 5 min read</p>
+                                    <p class="card-text">Explore the latest trends and innovations shaping the future of digital marketing. From AI-driven strategies to emerging social platforms...</p>
+                                    <a href="#" class="btn btn-custom">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts Grid -->
+    <section class="blog-grid py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Blog Post 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="card blog-card h-100">
+                        <img src="/api/placeholder/400/300" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <div class="post-category mb-2">Strategy</div>
+                            <h3 class="card-title h5">Content Marketing Strategies That Drive Results</h3>
+                            <p class="text-muted small mb-2">November 28, 2024 • 3 min read</p>
+                            <p class="card-text">Learn how to create content that engages your audience and drives measurable business results...</p>
+                            <a href="#" class="btn btn-link text-custom p-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="card blog-card h-100">
+                        <img src="/api/placeholder/400/300" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <div class="post-category mb-2">Analytics</div>
+                            <h3 class="card-title h5">Understanding Your Marketing Analytics</h3>
+                            <p class="text-muted small mb-2">November 25, 2024 • 4 min read</p>
+                            <p class="card-text">A comprehensive guide to interpreting your marketing data and making data-driven decisions...</p>
+                            <a href="#" class="btn btn-link text-custom p-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <article class="card blog-card h-100">
+                        <img src="/api/placeholder/400/300" class="card-img-top" alt="Blog Post">
+                        <div class="card-body">
+                            <div class="post-category mb-2">Social Media</div>
+                            <h3 class="card-title h5">Mastering Social Media Marketing</h3>
+                            <p class="text-muted small mb-2">November 22, 2024 • 3 min read</p>
+                            <p class="card-text">Tips and techniques for building a strong social media presence and engaging with your audience...</p>
+                            <a href="#" class="btn btn-link text-custom p-0">Read More <i class="fas fa-arrow-right ms-2"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-5">
+                <button class="btn btn-custom btn-lg">Load More Posts</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter-section py-5 bg-light">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2 class="h3 mb-4">Subscribe to Our Newsletter</h2>
+                    <p class="mb-4">Get the latest digital marketing insights delivered to your inbox</p>
+                    <form class="newsletter-form">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Enter your email address">
+                            <button class="btn btn-custom" type="submit">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as main page) -->
+    <footer class="py-4 bg-custom-dark text-white">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

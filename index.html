@@ -289,6 +289,46 @@
     </div>
 </section>
 
+    <div id="mc_embed_signup" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 text-center">
+                <!-- Success message (hidden by default) -->
+                <div id="success-message" style="display: none;">
+                    <div class="alert alert-success">
+                        <i class="fas fa-check-circle me-2"></i>
+                        ¡ Gracias por subirte a bordo! Nos esperan kilómetros de éxitos
+
+                    </div>
+                </div>
+
+                <!-- Form (shown by default) -->
+                <div id="subscription-form">
+                    <h2 class="h3 mb-4">Suscríbete a mi Viaje</h2>
+                    <p class="mb-4">Súbete y recibe estrategias, acciones y más acciones para ir por el carril correcto.</p>
+                    <form id="mc-embedded-subscribe-form" class="validate newsletter-form">
+                        <div class="mc-field-group input-group mb-3">
+                            <input type="email"
+                                   name="EMAIL"
+                                   class="form-control required email"
+                                   id="mce-EMAIL"
+                                   placeholder="¿Qué correo conducirá este viaje a tu bandeja?"
+                                   required>
+                            <button type="submit"
+                                    name="subscribe"
+                                    id="mc-embedded-subscribe"
+                                    class="btn btn-custom">
+                                Súbete
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 
 
@@ -323,4 +363,36 @@ function submitForm(event) {
     })
     .catch(error => console.error(error));
 }
+</script>
+
+
+
+<script>
+document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+
+    const email = document.getElementById('mce-EMAIL').value;
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   if (!emailRegex.test(email)) {
+       // Show error message
+       alert('Please enter a valid email address');
+       return;
+   }
+
+    // Hide the form
+    document.getElementById('subscription-form').style.display = 'none';
+
+    // Show the success message
+    document.getElementById('success-message').style.display = 'block';
+
+    // Optional: Submit to Mailchimp
+    const formData = new FormData(this);
+    fetch('https://github.us3.list-manage.com/subscribe/post?u=2ce63840d1519c7566023afc4&id=2955c9458d&f_id=0050e4e3f0', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+    });
+});
 </script>

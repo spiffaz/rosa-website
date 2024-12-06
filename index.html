@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BÁRBARA MARTÍNEZ -DIGITAL MARKETING & BUSINESS</title>
+
+    <link rel="icon" type="image/x-icon" href="images/blogger_527568.png">
+
+    <!-- For modern browsers, you can also add: -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/blogger_527568.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/blogger_527568.png">
+
+    <!-- For Apple devices -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/blogger_527568.png">
+
+    <!-- Optional manifest file for PWA -->
+    <link rel="manifest" href="images/blogger_527568.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -16,7 +28,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="nav-top">
         <div class="container">
             <a class="navbar-brand" href="#">
-                <img src="images/rose_logo.png" alt="Your Brand Logo" class="logo">
+                <img src="images/blogger_527568.png" alt="Your Brand Logo" class="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -156,15 +168,17 @@
     </section>
 
 
+    <!-- Contact Section -->
     <section id="contact" class="py-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
                 <h2 class="h3 mb-4">Conduce a Mí</h2>
-                <p class="mb-4">¿Tiene alguna pregunta o quiere discutir un proyecto? ¡Envíanos un mensaje!</p>
+                <p class="mb-4">¿Que necesitas para arrancar y ganar esta carrera? Enviame tu  mensaje</p>
 
                 <form action="https://formspree.io/f/xkgnegjw"
                       method="POST"
+                      onsubmit="submitForm(event)"
                       class="contact-form">
                     <div class="row">
                         <!-- Name -->
@@ -191,7 +205,7 @@
                         <input type="text"
                                name="subject"
                                class="form-control"
-                               placeholder="Sujeto">
+                               placeholder="¿Cual es tu problema en el peaje?">
                     </div>
 
                     <!-- Message -->
@@ -211,9 +225,65 @@
                     </div>
                 </form>
             </div>
-            <div class="text-center mt-5 social-icons">
-                <a href="https://www.linkedin.com/in/barbara-rosa-martinez-pedroso/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+
+            <div class="text-center mt-5">
+                <div class="social-icons mb-3">
+                    <a href="https://www.linkedin.com/in/barbara-rosa-martinez-pedroso/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                     <a href="https://www.instagram.com/bmw_digitalmarketing/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="contact-email">
+                    <a href="mailto:barbara@gmail.com" class="email-link">
+                        <i class="fas fa-envelope me-2"></i>rosmarba0205@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="partners" class="partners-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5" style="color: white;">Partners</h2>
+        <div class="row g-4">
+            <!-- First Row -->
+            <div class="col-md-4">
+                <div class="partner-card">
+                    <a href="https://www.apple.com" target="_blank" class="partner-link">
+                        <img src="images/apple_534611.png" alt="Apple" class="partner-logo">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="partner-card">
+                    <a href="https://badoo.com" target="_blank" class="partner-link">
+                        <img src="images/badoo_255311.png" alt="Badoo" class="partner-logo">
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="partner-card">
+                    <a href="https://www.example.com/presentation" target="_blank" class="partner-link">
+                        <img src="images/presentation_11846343.png" alt="Presentation" class="partner-logo">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Second Row -->
+            <div class="col-md-6">
+                <div class="partner-card">
+                    <a href="https://www.example.com/shopping" target="_blank" class="partner-link">
+                        <img src="images/online-shopping_3081559.png" alt="Online Shopping" class="partner-logo">
+                    </a>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="partner-card">
+                    <a href="https://www.example.com/cars" target="_blank" class="partner-link">
+                        <img src="images/cars_4950605.png" alt="Cars" class="partner-logo">
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -233,3 +303,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+<script>
+function submitForm(event) {
+    event.preventDefault();
+
+    fetch("https://formspree.io/f/xkgnegjw", {
+        method: "POST",
+        body: new FormData(event.target),
+        headers: {
+            'Accept': 'application/json'
+        }
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.href = "thank_you.html"; // Replace with your URL
+        }
+    })
+    .catch(error => console.error(error));
+}
+</script>

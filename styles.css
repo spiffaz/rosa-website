@@ -4,6 +4,19 @@
     color: white;
 }
 
+.navbar-brand img.logo {
+    height: 70px;  /* Increased from typical 40px */
+    width: auto;   /* Maintains aspect ratio */
+    transition: all 0.3s ease; /* Optional: smooth size change */
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .navbar-brand img.logo {
+        height: 50px; /* Slightly smaller on mobile but still prominent */
+    }
+}
+
 
 .logo {
     height: 40px; /* Adjust this value to control logo size */
@@ -203,6 +216,34 @@
 
 /* Blog Specific Styles - Add to your existing styles.css */
 
+/* Add or update these styles in your CSS */
+.featured-card {
+    height: 100%;
+    overflow: hidden; /* Prevents image overflow */
+}
+
+.featured-card .col-md-6:first-child {
+    height: 100%;
+    position: relative;
+}
+
+.featured-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes image cover the entire space */
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+    .featured-card .col-md-6:first-child {
+        height: 300px; /* Fixed height for mobile */
+        position: relative;
+    }
+}
+
 /* Featured Post */
 .featured-card {
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -225,9 +266,19 @@
 
 /* Blog Cards */
 .blog-card {
-    border: none;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     transition: transform 0.3s ease;
 }
+
+.card-img-top {
+    width: 100%;
+    height: 250px; /* Fixed height for all images */
+    object-fit: cover; /* Makes images cover the area without distortion */
+    object-position: center; /* Centers the image */
+}
+
 
 .blog-card:hover {
     transform: translateY(-5px);
@@ -265,6 +316,25 @@
     background-color: white;
     border-bottom: 1px solid #eee;
 }
+
+.card-body {
+    flex: 1; /* Takes up remaining space */
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-grid .col-lg-4 {
+    display: flex;
+}
+
+/* For responsive design */
+@media (max-width: 768px) {
+    .card-img-top {
+        height: 200px; /* Slightly smaller height for mobile */
+    }
+}
+
+
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
@@ -538,31 +608,91 @@
 
 /* Partners Section Styles */
 .partners-section {
-    background-color: #171717;
+    background: linear-gradient(45deg, #ff5600, #ff7e3d);
     padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Modern decorative elements */
+.partners-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ff5600;
 }
 
 .partners-section h2 {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 3rem;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 
 .partner-card {
-    background-color: #222222;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
     padding: 2rem;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.1),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.partner-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    transition: all 0.6s ease;
+    opacity: 0;
 }
 
 .partner-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    background-color: #2a2a2a;
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.2),
+        inset 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.partner-card:hover::after {
+    opacity: 1;
+    transform: rotate(45deg) translate(50%, 50%);
+}
+
+.partner-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 .partner-logo {
@@ -574,34 +704,62 @@
 
 .partner-card:hover .partner-logo {
     opacity: 1;
+    transform: scale(1.05);
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .partner-card {
         padding: 1.5rem;
+        margin-bottom: 1rem;
     }
 
     .partners-section h2 {
         font-size: 2rem;
     }
+
+    .partner-logo {
+        max-width: 30%;
+    }
 }
 
-.partner-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+
+/* Custom Success Message */
+
+
+#custom-success-message {
+    animation: fadeIn 0.5s ease-in;
 }
 
-.partner-link:hover {
-    cursor: pointer;
+.alert-success {
+    background-color: rgba(255, 86, 0, 0.1);
+    border: 1px solid #ff5600;
+    color: #ff5600;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: 500;
 }
 
-/* Ensure the hover effect still works with the link */
-.partner-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    background-color: #2a2a2a;
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.alert-success {
+    background-color: rgba(255, 86, 0, 0.1);
+    border: 1px solid #ff5600;
+    color: #ff5600;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+#success-message {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

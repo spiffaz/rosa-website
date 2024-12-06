@@ -170,6 +170,13 @@ document.getElementById('mc-embedded-subscribe-form').addEventListener('submit',
 
     const email = document.getElementById('mce-EMAIL').value;
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+   if (!emailRegex.test(email)) {
+       // Show error message
+       alert('Please enter a valid email address');
+       return;
+   }
+
     // Hide the form
     document.getElementById('subscription-form').style.display = 'none';
 

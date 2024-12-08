@@ -121,8 +121,25 @@
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/IMG-20241205-WA0010.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed; /* Optional: creates parallax effect */
     color: white;
+    position: relative;
+}
+
+/* For desktop devices - enable parallax */
+@media (min-width: 992px) {
+    .hero-section {
+        background-attachment: fixed;
+    }
+}
+
+/* iOS-specific fix */
+@supports (-webkit-touch-callout: none) {
+    .hero-section {
+        background-attachment: scroll;
+        /* Alternate solution using transform */
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
 }
 
 
